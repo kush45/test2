@@ -7,9 +7,9 @@ from django.core.exceptions import ValidationError
 
 class RegisterSerializer(serializers.ModelSerializer):
 
-    # class Meta:
-    #     model = Register
-    #     fields = '__all__'
+    class Meta:
+        model = Register
+        fields = '__all__'
 
     # def save(self):
     #     account = Register(
