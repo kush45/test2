@@ -14,25 +14,25 @@ import hashlib, uuid
 class UserView(ViewSet):
 
 
-    # def list(self, request):
-    #     try:
-    #         queryset = Register.objects.all()
-    #         serializer = RegisterSerializer(queryset, many=True)
-    #         return Response(serializer.data)
-    #     except Exception as e:
-    #         return Response({"error": True, "message": str(e), "status": 400}, status=status.HTTP_400_BAD_REQUEST)
+    def list(self, request):
+        try:
+            queryset = Register.objects.all()
+            serializer = RegisterSerializer(queryset, many=True)
+            return Response(serializer.data)
+        except Exception as e:
+            return Response({"error": True, "message": str(e), "status": 400}, status=status.HTTP_400_BAD_REQUEST)
 
     def create(self, request):
 
-        # serializer = RegisterSerializer(data=request.data)
-        # data = {}
-        # if serializer.is_valid():
+        serializer = RegisterSerializer(data=request.data)
+        data = {}
+        if serializer.is_valid():
             
-        #     account = serializer.save()
-        #     data['response'] = "successfully registered a new user."
-        #     data['email'] = account.email
-        #     data['username'] = account.username
-        # else:
+            account = serializer.save()
+            data['response'] = "successfully registered a new user."
+            data['email'] = account.email
+            data['username'] = account.username
+        else:
         #     data = serializer.errors
         # return Response(data)
 
