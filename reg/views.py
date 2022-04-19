@@ -24,17 +24,17 @@ class UserView(ViewSet):
 
     def create(self, request):
 
-        # serializer = RegisterSerializer(data=request.data)
-        # data = {}
-        # if serializer.is_valid():
+        serializer = RegisterSerializer(data=request.data)
+        data = {}
+        if serializer.is_valid():
             
-        #     account = serializer.save()
-        #     data['response'] = "successfully registered a new user."
-        #     data['email'] = account.email
-        #     data['username'] = account.username
-        # else:
-        #     data = serializer.errors
-        # return Response(data)
+            account = serializer.save()
+            data['response'] = "successfully registered a new user."
+            data['email'] = account.email
+            data['username'] = account.username
+        else:
+            data = serializer.errors
+        return Response(data)
 
         try:
         
