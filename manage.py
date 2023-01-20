@@ -20,8 +20,13 @@ def main():
 if __name__ == '__main__':
     main()
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     print("kush")
+=======
+    
+    print("test")
+>>>>>>> ae7234048c9ab846e00e25e015d1e23bc6889cfc
 =======
     
     print("test")
